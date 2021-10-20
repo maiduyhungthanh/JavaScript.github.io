@@ -11,27 +11,74 @@
     <img src="../homework.jpg" alt="homework" height="200px" width="400px">
     
     <script src="buoi2.js"></script>
+    <h5>Array</h5>
     <pre>
-Bài 1: Viết function kiểm tra 1 giá trị có nằm trong mảng hay không
-Ví dụ: checkElementExist([1,2,3,4], 4) => true
-Ví dụ: checkElementExist([1,2,3,4], 5) => false
+        1. Viết function kiểm tra 1 giá trị có nằm trong mảng hay không
+        Ví dụ: checkElementExist([1,2,3,4], 4) => true
+        Ví dụ: checkElementExist([1,2,3,4], 5) => false
+        2. Viết function tìm ra số lớn thứ nhì trong mảng các số. 
+        Ví dụ: max2Numbers([2, 1, 3, 4]) => 3
+        3. Viết function để lấy một phần tử ngẫu nhiên từ một mảng
+        Ví dụ: randomElement([3, 7, 9, 11]) => 3
+        Ví dụ: randomElement([3, 7, 9, 11]) => 9
+        4. Cho 1 mảng các chuỗi. Viết function lọc ra các phần tử có độ dài lớn nhất. 
+        Ví dụ: findMaxLengthElement["aba", "aa", "ad", "c", "vcd"] => ["aba", "vcd"]
+        5. Viết function để lấy một mảng bao gồm các phần tử xuất hiện trong cả hai mảng
+        Ví dụ: similarity([1, 2, 3], [1, 2, 4]) => [1,2]
+        6. Viết function remove những phần tử bị trùng nhau trong mảng
+        Ví dụ: removeDuplicates([1,2,5,2,6,2,5]) => [1,2,5,6]
+        7. Viết function để tạo mã màu HEX ngẫu nhiên.
+        Ví dụ: randomHexCode() => #2ecc71
+        Ví dụ: randomHexCode() => #8e44ad
+        8. Viết function để tạo mã màu RGB ngẫu nhiên.
+        Ví dụ: randomRgbCode() => rgb(46, 204, 113)
+        Ví dụ: randomRgbCode() => rgb(142, 68, 173)
+    </pre>
+    <h5>String</h5>
+    <pre>
+        1. Viết function kiểm tra 1 chuỗi có nằm trong chuỗi còn lại hay không
 
-Bài 2: Viết function tìm ra số lớn thứ nhì trong mảng các số.
-Ví dụ: max2Numbers([2, 1, 3, 4]) => 3
-Ví dụ: max2Numbers([2, 1, 3, 4, 4]) => 3
+Ví dụ: checkStringExist("i love you", "you") => true
+Ví dụ: checkStringExist("i love you", "hate") => false
+2. Viết function rút ngắn chuỗi bằng cách cắt ra 8 ký tự đầu của 1 chuỗi và thêm dấu ba chấm ở cuối chuỗi.
 
-Bài 3: Cho 1 mảng các chuỗi. Viết function lọc ra các phần tử có độ dài lớn nhất.
-Ví dụ: findMaxLengthElement["aba", "aa", "ad", "c", "vcd"] => ["aba", "vcd"]
+Ví dụ: shortenString('Xin chào các bạn') => 'Xin chào...'
+Ví dụ: shortenString('Hello') => 'Hello'
+3. Viết function có tác dụng biến 1 chuỗi thành chuỗi chỉ viết hoa từ đầu tiên.
 
-Bài 4: Viết function có tác dụng biến 1 chuỗi thành chuỗi chỉ viết hoa từ đầu tiên.
 Ví dụ: capitalizeString('chÀo MừnG đẾn với techMaster') => 'Chào Mừng Đến Với Techmaster'
+4. Cho 1 chuỗi và 1 số nguyên n > 1, hãy viết function có tác dụng sao chép đó chuỗi lên n lần, ngăn cách nhau bởi dấu gạch ngang.
 
-Bài 5: Viết function với đầu vào là 1 chuỗi string. Trả về chuỗi đảo ngược của chuỗi đó
+Ví dụ: repeatString('a', 5) => 'a-a-a-a-a'
+5. Viết function với đầu vào là 1 chuỗi string. Trả về chuỗi đảo ngược của chuỗi đó
+
 Ví dụ: reverseString('Hello') => 'olleH'
+6. Cho 1 chuỗi, kiểm tra xem chuỗi đó có phải chuỗi đối xứng hay không (đọc xuôi hay ngược đều như nhau, không tính khoảng trắng, không phân biệt hoa thường),
 
-Bài 6: Cho 1 chuỗi, kiểm tra xem chuỗi đó có phải chuỗi đối xứng hay không (đọc xuôi hay ngược đều như nhau, không tính khoảng trắng, không phân biệt hoa thường),
 Ví dụ: checkSymmetricString("Race car") => true
 Ví dụ: checkSymmetricString("hello world") => false
+7. Viết một function nhận vào string, trả về số lượng nguyên âm có trong string
+
+Nguyên âm:  a, o, e, u, i.
+Ví dụ: countNumberVowels("hello") => 2
+Ví dụ: countNumberVowels("hello hien") => 4
+8. Viết function kiểm tra xem một chuỗi có kết thúc bằng chuỗi khác hay không.
+
+Ví dụ : confirmEnding("hello", "lo") => true
+Ví dụ : confirmEnding("hello", "ll") => false
+9. Viết function lấy ra những chữ cái đầu của từng từ trong chuỗi, các chữ cái đầu được phân tách với nhau bằng dấu cách
+
+Ví dụ : getFirstLetter("xin chào các bạn") => "x c c b"
+Ví dụ : getFirstLetter("hello world") => "h c"
+10. Viết function nhập vào 1 chuỗi bất kỳ. Sắp xếp các ký tự trong chuỗi theo chiều tăng dần của bảng chữ cái (có phân biệt chữ hoa, chữ thường). Yêu cầu loại bỏ khoảng trắng trong chuỗi trước khi sắp xếp
+
+Ví dụ : sortLetters("hello world") => "dehllloorw"
+Ví dụ : sortLetters("HellO WorLd") => "HLOWdellor"
+11. Viết function nhập vào 1 chuỗi bất kỳ. Tìm ra ký tự không bị lặp lại trong chuỗi (không tính khoảng trắng)
+
+Ví dụ : getLetterNoRepeat("abc abce") => "e";
+Ví dụ : getLetterNoRepeat("abce abcdf") => "e,d,f";
+Ví dụ : getLetterNoRepeat("abab") => "";
     </pre>
 </body>
 </html>
