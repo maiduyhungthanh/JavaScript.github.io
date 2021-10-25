@@ -135,10 +135,9 @@ console.log(repeatString('a',5));
 
 //bài 5
 function reverseString(st){
-    const s=st.split('')
-    const str=s.reverse();
-    st=str.join('')
-    return st;
+    const s=st.split('').reverse().join('');
+
+    return s;
 }
 console.log(reverseString('Hello'))
 
