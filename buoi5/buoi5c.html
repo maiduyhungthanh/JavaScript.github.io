@@ -140,6 +140,9 @@
             padding: 15px;
             list-style-type: none;
         }
+        .hidden {
+	display: none;
+}
     </style>
 </head>
 
@@ -185,14 +188,49 @@
         // Yêu cầu: Sử dụng Javascript để thực hiện các công việc sau
 
         // 1. Thêm 3 job bổ sung vào phần 'job' của trang bằng cách sao chép 'job-card' ban đầu.
-
+        let jobCard = document.querySelector(".job-card")
+        let jobs = document.querySelector(".jobs")
+        let jobsCardInener = document.querySelector(".job-card-inner")
+      for (let i = 0; i < 3; i++) {
+        let newJob = jobCard.cloneNode(true);
+        jobs.appendChild(newJob);
+      }
+        
+        
         // 2. Cập nhật tiêu đề của các job mới thành : JavaScript Developer, Java Developer, Python Developer
-
+      let titleJob = ["Software Engineer","JavaScript Developer","Java Developer", "Python Developer"]
+      let arrJob = document.querySelectorAll(".job-card h3")
+      for (let i = 1; i < arrJob.length; i++) {
+          arrJob[i].innerText = titleJob[i]
+          
+      }
         // 3. Cập nhật Jobs listed thành tổng số công việc hiện có trong trang
-
+      let totalJob = document.querySelector("h2#jobs-listed span")
+      console.log(totalJob.innerText)
+      totalJob.innerText = arrJob.length
         // 4. Nhập tên công việc vào ô tìm kiếm để lọc các công việc (lọc theo tên công việc). Những công việc được tìm thấy sẽ hiển thị ra, còn lại sẽ bị ẩn đi
-
+      let searchJob = document.getElementById("search")
+      let listJob = document.getElementsByClassName("job-card");
+      let arrayJob = Array.from(listJob);
+      searchJob.addEventListener("input", function(){
+        
+        for (let i = 0; i < arrayJob.length; i++) {
+           if (arrayJob[i].querySelector("h3").innerText.toLowerCase().includes(searchJob.value) == false ){
+               arrayJob[i].classList.add("hidden")
+           } else if (arrayJob[i].querySelector("h3").innerText.toLowerCase().includes(searchJob.value) == true){
+               arrayJob[i].classList.remove("hidden")
+           }
+        }
+      })
+ 
         // 5. Bấm vào Nút "All jobs" để reset ô tìm kiếm và hiển thị ra tất cả các công việc
+        let reset = document.getElementById("show-all")
+        reset.addEventListener("click", function(){
+            searchJob.value =""
+            for (let i = 0; i < arrayJob.length; i++) {
+                arrayJob[i].classList.remove("hidden")
+            }
+        })
     </script>
 </body>
 
