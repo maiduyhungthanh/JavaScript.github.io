@@ -200,20 +200,48 @@ for (let j = 0; j < arrStudent.length; j++) {
     tdTotalOff.innerHTML = `${arrStudent[j].totalOff}/14`
     tr.appendChild(tdTotalOff)
 
-    let tdDetailInfo = document.createElement('td')
-    tr.appendChild(tdDetailInfo)
-    
-    let k = 0;
-    let arrDetailInfo1 = document.querySelectorAll('student_warning.students.detailInfo.date')
-    console.log(arrDetailInfo1)
-    for (let i = 0; i < arrDetailInfo1.length; i++) {   
-    
-    let a =document.createElement('span') 
-    let pDetailInfo = document.createElement('p')
-    a.innerHTML = `${arrDetailInfo1[i]}`
-    tdDetailInfo.appendChild(a)
+
+    let cellDayOff = row.insertCell();
+    let cellNote = row.insertCell();
+    let cellTeacher = row.insertCell();
+    let detailInfoArr = Array.from(data[i].detailInfo);
+    for (let j = 0; j < detailInfoArr.length; j++) {
+      let tr1 = document.createElement("tr");
+      tr1.style.borderRightStyle = "hidden";
+      tr1.style.borderLeftStyle = "hidden";
+      tr1.style.borderBottomStyle = "none";
+      tr1.innerHTML = `
+          <td style="text-align:center">${detailInfoArr[j].date}</td>`;
+      cellDayOff.appendChild(tr1);
+      let tr2 = document.createElement("tr");
+      tr2.style.borderRightStyle = "hidden";
+      tr2.style.borderLeftStyle = "hidden";
+      tr2.style.borderBottomStyle = "none";
+      tr2.innerHTML = `
+      <td style="text-align:left;">${detailInfoArr[j].note}</td>`;
+      cellNote.appendChild(tr2);
+      let tr3 = document.createElement("tr");
+      tr3.style.borderRightStyle = "hidden";
+      tr3.style.borderLeftStyle = "hidden";
+      tr3.style.borderBottomStyle = "none";
+      tr3.innerHTML = `
+      <td style="text-align:left;">${detailInfoArr[j].teacher_name}</td>`;
+      cellTeacher.appendChild(tr3);
     }
-    k++
+    // let tdDetailInfo = document.createElement('td')
+    // tr.appendChild(tdDetailInfo)
+    
+    // let k = 0;
+    // let arrDetailInfo1 = document.querySelectorAll('student_warning.students.detailInfo.date')
+    // console.log(arrDetailInfo1)
+    // for (let i = 0; i < arrDetailInfo1.length; i++) {   
+    
+    // let a =document.createElement('span') 
+    // let pDetailInfo = document.createElement('p')
+    // a.innerHTML = `${arrDetailInfo1[i]}`
+    // tdDetailInfo.appendChild(a)
+    // }
+    // k++
 
     // let ulDetailInfo = document.createElement('ul')
     // let liDatailInfo = document.createElement('li')
