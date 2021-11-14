@@ -54,7 +54,9 @@
         table tbody tr:not(last-child) {
             border-bottom: 4px solid #ccc;
         }
-
+        table tbody tr td p  {
+            border-bottom: 4px solid #ccc;
+        }
         p span {
             display: inline-block;
             font-weight: 700;
@@ -200,56 +202,29 @@ for (let j = 0; j < arrStudent.length; j++) {
     tdTotalOff.innerHTML = `${arrStudent[j].totalOff}/14`
     tr.appendChild(tdTotalOff)
 
+    let tdDate = document.createElement('td')
+    tr.appendChild(tdDate)
+    let tdNote = document.createElement('td')
+    tr.appendChild(tdNote)
+    let tdTeachName = document.createElement('td')
+    tr.appendChild(tdTeachName)
+    let arrDetail = Array.from(student_warning.students[j].detailInfo)
+    console.log(arrDetail)
+    for (let i = 0; i < arrDetail.length; i++) {
+        let pDate = document.createElement('p')
+        pDate.innerHTML = `${student_warning.students[j].detailInfo[i].date}`
+        tdDate.appendChild(pDate)
 
-    let cellDayOff = row.insertCell();
-    let cellNote = row.insertCell();
-    let cellTeacher = row.insertCell();
-    let detailInfoArr = Array.from(data[i].detailInfo);
-    for (let j = 0; j < detailInfoArr.length; j++) {
-      let tr1 = document.createElement("tr");
-      tr1.style.borderRightStyle = "hidden";
-      tr1.style.borderLeftStyle = "hidden";
-      tr1.style.borderBottomStyle = "none";
-      tr1.innerHTML = `
-          <td style="text-align:center">${detailInfoArr[j].date}</td>`;
-      cellDayOff.appendChild(tr1);
-      let tr2 = document.createElement("tr");
-      tr2.style.borderRightStyle = "hidden";
-      tr2.style.borderLeftStyle = "hidden";
-      tr2.style.borderBottomStyle = "none";
-      tr2.innerHTML = `
-      <td style="text-align:left;">${detailInfoArr[j].note}</td>`;
-      cellNote.appendChild(tr2);
-      let tr3 = document.createElement("tr");
-      tr3.style.borderRightStyle = "hidden";
-      tr3.style.borderLeftStyle = "hidden";
-      tr3.style.borderBottomStyle = "none";
-      tr3.innerHTML = `
-      <td style="text-align:left;">${detailInfoArr[j].teacher_name}</td>`;
-      cellTeacher.appendChild(tr3);
+        let pNote = document.createElement('p')
+        pNote.innerHTML = `${student_warning.students[j].detailInfo[i].note}`
+        tdNote.appendChild(pNote)
+        
+        let pTeachName = document.createElement('p')
+        pTeachName.innerHTML = `${student_warning.students[j].detailInfo[i].teacher_name}`
+        tdTeachName.appendChild(pTeachName)
     }
-    // let tdDetailInfo = document.createElement('td')
-    // tr.appendChild(tdDetailInfo)
-    
-    // let k = 0;
-    // let arrDetailInfo1 = document.querySelectorAll('student_warning.students.detailInfo.date')
-    // console.log(arrDetailInfo1)
-    // for (let i = 0; i < arrDetailInfo1.length; i++) {   
-    
-    // let a =document.createElement('span') 
-    // let pDetailInfo = document.createElement('p')
-    // a.innerHTML = `${arrDetailInfo1[i]}`
-    // tdDetailInfo.appendChild(a)
-    // }
-    // k++
-
-    // let ulDetailInfo = document.createElement('ul')
-    // let liDatailInfo = document.createElement('li')
-    // tdDetailInfo.appendChild(ulDetailInfo)
-    // ulDetailInfo.appendChild(liDatailInfo)
-    // liDatailInfo.innerHTML =`sss`
 }
-
+   
     //CHI TIẾT LỚP HỌC
     
 let classDetails = document.querySelector("div.class-inner")
