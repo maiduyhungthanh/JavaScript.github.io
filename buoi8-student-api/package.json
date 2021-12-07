@@ -1,7 +1,7 @@
 {
   "name": "student",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Chạy project",
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
