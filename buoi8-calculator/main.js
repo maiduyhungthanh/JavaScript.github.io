@@ -19,7 +19,7 @@ operator.innerHTML = operatorList[Math.floor(Math.random() * operatorList.length
 warning.innerHTML = "kết quả sai"
 result.insertAdjacentElement("afterend", warning)
 warning.style.display = 'none'
-result.addEventListener('keyup' ,function(event){
+result.addEventListener('keydown' ,function(event){
     if (event.keyCode === 13) {
         event.preventDefault();
         calculating()
@@ -36,7 +36,7 @@ function calculating(){
       result.value = ""
       warning.style.display = 'none'
     }else if(result.value == ""){
-      alert("Kết Quả Không Để Trống")
+      alert("Kết Quả Không Được Để Trống")
       warning.style.display = 'none'
     }else {
       result.value = ""
