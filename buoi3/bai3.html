@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+            <li>Item 6</li>
+            <li>Item 7</li>
+          </ul>
+    <!-- <pre>
+        Câu 1. Tạo 1 thẻ p có id=“text”, có nội dung bất kỳ (có thể tạo bằng HTML hay Javascript - tùy chọn). Yêu cầu
+
+Đặt màu văn bản thành #777
+Đặt kích thước phông chữ thành 2rem
+Đặt nội dung HTML thành Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.
+Câu 2. Sử dụng vòng lặp để đặt màu chữ cho tất cả thẻ li thành màu blue (tạo thẻ ul-li bằng html)
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+Câu 3. Cho mã HTML có nội dung như sau (tạo thẻ ul-li bằng html):
+<ul id="list">
+   <li>Item 1</li>
+   <li>Item 2</li>
+   <li>Item 3</li>
+   <li>Item 4</li>
+   <li>Item 5</li>
+   <li>Item 6</li>
+   <li>Item 7</li>
+</ul>
+Sử dụng javascript để thực hiện những công việc sau
+Thêm 3 thẻ <li> có nội dung Item 8, Item 9, Item 10 vào cuối danh sách
+Sửa nội dung cho thẻ <li> 1 thành màu đỏ (color)
+Sửa background cho thẻ <li> 3 thành màu xanh (background-color)
+Remove thẻ <li> 4
+Thêm thẻ <li> mới thay thế cho thẻ <li> 4 bị xóa ở bước trước, thẻ <li> mới có nội dung bất kỳ
+    </pre> -->
+    <script>
+// bai 1
+const t = document.createElement("p");
+t.id = "text";
+t.style.color = '#777'
+t.style.fontSize = '2rem'
+t.innerHTML = "Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript."
+document.body.prepend(t);
+    
+//bài 2
+const liAll = document.getElementsByTagName("li")
+for (let i = 0; i < liAll.length; i++) {
+    liAll[i].style.color = 'blue'
+}
+
+//bài 3
+const list = document.getElementById('list')
+const li7 = document.querySelector(".list > li:last-child")
+const li8 = document.createElement("li")
+li8.innerText = "Item 8"
+const li9 = document.createElement("li")
+li9.innerText = "Item 9"
+const li10 = document.createElement("li")
+li10.innerText = "Item 10"
+list.append(li8)
+list.append(li9)
+list.append(li10)
+
+const liList = document.querySelectorAll("#list > li")
+liList[0].style.color = 'red'
+liList[2].style.backgroundColor = 'green'
+list.removeChild(liList[3])
+const li4new = document.createElement("li")
+li4new.innerText = "New Item 4"
+list.insertBefore(li4new, liList[4])
+    </script>
+    </body>
+</html>
