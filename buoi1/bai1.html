@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>Bài 1: Viết function truyền vào 1 số nguyên dường. Tính giai thừa của số đó
+
+        Ví dụ: calculateFactorial(5) = 5 * 4 * 3 * 2 * 1 = 120
+        Bài 2: Viết function truyền vào 1 chuỗi. In ra chuỗi đảo ngược của chuỗi đó
+        
+        Ví dụ: reverseString(‘hello’) => olleh
+        Bài 3: Viết function truyền vào mã quốc gia. Trả về message có ý nghĩa là “Xin chào”, tương ứng với mã quốc gia được truyền vào
+        
+        Ví dụ: translate(‘VN’) => “Xin chào”
+        translate(‘EN’) => “Hello”
+        Gợi ý : Sử dụng switch - case . Học viên tự nghĩ ra 1 vài mã quốc gia và câu chào tương ứng với quốc gia đó
+        
+        Bài 4: Cho function truyền vào 1 chuỗi dài hơn 15 ký tự. Viết 1 function cắt chuỗi, lấy ra 10 ký tự đầu tiên và thêm vào dấu “…” ở cuối chuỗi.
+        
+        Ví dụ : subString(“xinchaocacbandenvoiTechmaster”) => “xinchaocac…”</pre>
+    <script>
+        //bai 1
+        function factorial(n) {
+            let answer = 1;
+            if (n == 0 || n == 1) {
+                return answer;
+            } else {
+                for (var i = n; i >= 1; i--) {
+                    answer = answer * i;
+                }
+                return answer;
+            }
+        }
+        console.log(factorial(5));
+
+        //bai 2
+        function reverseString(st){
+            return st.split('').reverse().join('');
+        }
+        console.log(reverseString("Hello"));
+
+        //bai 3
+        function translate(tr){
+            switch(tr){
+                case "VN": tr = "xin chao";
+                break;
+                case "EN": tr = "Hello";
+                break;
+                case "JP" : tr = "o-hai-o"  ;
+                break;
+            }
+            return tr;
+        }
+        console.log(translate("VN"))
+
+        //bai 4
+        function subString(s){
+            const st = s.slice(0,10)+"...";
+            return st;
+        }
+        console.log(subString("xinchaocacbandenvoiTechmaster"));
+    </script>
+</body>
+
+</html>

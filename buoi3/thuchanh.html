@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Bài tập thực hành DOM</h1>
+<p class="para para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p class="para para-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p class="para para-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<div class="content">
+    <h2 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatibus sint molestias sit odit quia labore alias! Accusamus magnam aperiam officiis? Laboriosam numquam at eum dicta quos temporibus in aliquid?</p>
+</div>
+<pre>1.Truy cập vào thẻ h1 có id=“heading” thay đổi màu chữ thành ‘red’, và in hoa nội dung của thẻ đó
+     2.Thay đổi màu chữ của tất cả thẻ có class “para” thành màu “blue” và có font-size = “20px”
+     3.Thêm thẻ a link đến trang ‘facebook’ ở đằng sau thẻ có class “para-3”
+     4.Thay đổi nội dung của thẻ có id=“title” thành “Đây là thẻ tiêu đề”
+     5.Thêm class “text-bold” vào thẻ có class=“description” (định nghĩa class “text-bold” có tác dụng in đậm chữ)
+     6.Thay thế thẻ có class=“para-3” thành thẻ button có nội dung là “Click me”
+     7.Copy thẻ có class=“para-2” và hiển thị ngay đằng sau thẻ đó
+     8.Xóa thẻ có class=“para-1”</pre>
+<script>
+    //bai 1
+const h1 = document.getElementById("heading")
+h1.style.color = "red"
+h1.style.textTransform = "uppercase"
+    //bai 2
+const listPara = document.querySelectorAll(".para")
+Array.from(listPara).map (n=>(n.style.color = "blue") && (n.style.fontSize ="20px"))
+    //bai 3
+const link = document.createElement("a")
+link.innerText = "Facebook"
+link.href = "fb.com"
+listPara[2].insertAdjacentElement("afterend",link)
+    //bai 4
+const title = document.getElementById("title")
+title.innerText = "Đây là thẻ tiêu đề"
+    //bai 5 
+    //bai 6
+const para3 = document.querySelector(".para3")
+const button = document.createElement("button")
+button.innerText = "Click me"
+
+para3.onclick = function(){
+        button;
+    };
+
+</script>
+</body>
+</html>
